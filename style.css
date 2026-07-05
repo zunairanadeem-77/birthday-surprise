@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fce4ec;
+    overflow: hidden;
+}
+
+/* Screen Controller */
+.screen {
+    display: none; /* Default hidden */
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Displays for active states */
+.screen.active {
+    display: block !important;
+}
+
+.screen.flex-active {
+    display: flex !important;
+}
+
+.flex-center {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bg-pink {
+    background-color: #ffebee;
+}
+
+/* Passcode Screen Layout */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.left-box {
+    flex: 1;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px solid #f8bbd0;
+}
+
+.profile-pic {
+    width: 70%;
+    border-radius: 50%;
+    border: 8px solid #f8bbd0;
+}
+
+.right-box {
+    flex: 1;
+    background-color: #fce4ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    color: #c2185b;
+    margin-bottom: 20px;
+}
+
+/* Dots Indicator */
+.dots-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c2185b;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.dot.filled {
+    background-color: #c2185b;
+}
+
+/* Keypad Grid */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    gap: 15px;
+}
+
+.keypad button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    color: #c2185b;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.2s;
+}
+
+.keypad button:active {
+    transform: scale(0.9);
+    background-color: #f8bbd0;
+}
+
+/* General Cards & Buttons */
+.popup-box, .card, .letter-card, .gallery-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    max-width: 500px;
+    width: 90%;
+}
+
+.error-text {
+    color: #d32f2f;
+}
+
+.status-img {
+    width: 150px;
+    margin: 20px 0;
+}
+
+.btn-primary, .btn-next {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-yes { background-color: #4caf50; color: white; border: none; padding: 12px 30px; border-radius: 25px; font-size: 18px; cursor: pointer; }
+.btn-no { background-color: #f44336; color: white; border: none; padding: 12px 30px; border-radius: 25px; font-size: 18px; cursor: pointer; }
+
+/* Letter Content Scrolling */
+.letter-content {
+    text-align: left;
+    max-height: 250px;
+    overflow-y: auto;
+    margin: 20px 0;
+    padding-right: 10px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Gallery Images Layout */
+.photo-layout {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.gallery-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #f8bbd0;
+}
+
+.date-text {
+    font-weight: bold;
+    color: #c2185b;
+}
