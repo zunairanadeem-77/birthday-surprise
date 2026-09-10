@@ -3,24 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday! 💕</title>
+    <title>Birthday Surprise ✨</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Glitter Effect Background -->
+    <div class="glitter-container">
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+        <span class="glitter"></span>
+    </div>
 
     <div id="screen-passcode" class="screen active">
-        <div class="container">
-            <div class="left-box">
-                <img src="cat-heart.gif" alt="Cute Cat" class="profile-pic">
+        <div class="main-card">
+            
+            <div class="left-section">
+                <div class="cat-frame">
+                    <img src="cat.jpg" alt="Cute Cat" class="cat-img">
+                </div>
             </div>
-            <div class="right-box">
-                <h2>Enter a passcode</h2>
+
+            <div class="right-section">
+                <h2 class="title-text">✨ Enter Your Birthday ✨</h2>
+                
                 <div class="dots-container">
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
+
                 <div class="keypad">
                     <button onclick="pressKey(1)">1</button>
                     <button onclick="pressKey(2)">2</button>
@@ -31,62 +57,120 @@
                     <button onclick="pressKey(7)">7</button>
                     <button onclick="pressKey(8)">8</button>
                     <button onclick="pressKey(9)">9</button>
-                    <button onclick="clearCode()">*</button>
+                    <button class="btn-action" onclick="clearCode()">C</button>
                     <button onclick="pressKey(0)">0</button>
-                    <button onclick="checkCode()">#</button>
+                    <button class="btn-action" onclick="checkCode()">🔓</button>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <div id="screen-wrong-passcode" class="screen flex-center bg-pink">
-        <div class="popup-box">
-            <h1 class="error-text">WRONG PASSCODE!</h1>
-            <img src="sad-cute.gif" alt="Sad" class="status-img">
-            <button class="btn-primary" onclick="showScreen('screen-passcode')">TRY AGAIN</button>
-        </div>
-    </div>
 
-    <div id="screen-question" class="screen flex-center bg-pink">
-        <div class="card">
-            <h2>I made something special for you, do you want to see? 🥰</h2>
-            <img src="cute-box.gif" alt="Box" class="status-img">
+    <div id="screen-question" class="screen">
+        <div class="glass-card">
+            
+            <h2 id="animated-text" class="question-text"></h2>
+            
+            <div class="gif-container">
+                <img src="cute-box.gif" alt="Cute Box Cat" class="card-gif">
+            </div>
+
             <div class="btn-group">
-                <button class="btn-yes" onclick="showScreen('screen-wish')">YES</button>
+                <button class="btn-yes" onclick="showScreen('screen-happy-birthday')">YES</button>
                 <button class="btn-no" onclick="showScreen('screen-wrong-choice')">NO</button>
             </div>
         </div>
     </div>
 
-    <div id="screen-wrong-choice" class="screen flex-center bg-pink">
-        <div class="popup-box">
-            <h1>Why did you click no?! 🥺</h1>
-            <img src="angry-cute.gif" alt="Angry" class="status-img">
-            <button class="btn-primary" onclick="showScreen('screen-question')">TRY AGAIN</button>
+
+    <div id="screen-wrong-choice" class="screen">
+        <div class="glass-card">
+            <h2 class="error-title">Why did u click no?!</h2>
+            
+            <div class="gif-container">
+                <img src="sad-cute.gif" alt="Sad Cat" class="card-gif">
+            </div>
+
+            <button class="btn-try-again" onclick="showScreen('screen-question')">TRY AGAIN</button>
         </div>
     </div>
 
-    <div id="screen-wish" class="screen flex-center bg-pink">
-        <div class="letter-card">
-            <h1>✨ MY WISH FOR YOU ✨</h1>
-            <div class="letter-content">
-                <p>Happiest Birthday, my favorite person! ❤️</p>
-                <p>I wish May God bless you with all the happiness and success in your life. Thank you for always being there for me, for all the efforts, love, and care that you have shown.</p>
-                <p>You are the most beautiful part of my life, my comfort person, and you make me the happiest! I love you so much. Once again, Happy Birthday! 🎉</p>
+
+    <div id="screen-happy-birthday" class="screen">
+        <div class="birthday-card">
+            
+            <div class="birthday-left">
+                <div class="birthday-cat-frame">
+                    <img src="download (8).jpg" alt="Happy Birthday Cat" class="birthday-cat-img">
+                </div>
             </div>
-            <button class="btn-next" onclick="showScreen('screen-gallery')">Click Next 👉</button>
+
+            <div class="birthday-right">
+                <div class="wish-box">
+                    
+                    <span class="deco-element top-left">❤️</span>
+                    <span class="deco-element top-right">❤️</span>
+                    <span class="deco-element bottom-left">❤️</span>
+                    <span class="deco-element bottom-right">❤️</span>
+                    
+                    <h2 class="wish-title">Happy Birthday! ❤️</h2>
+                    
+                    <p id="wish-text" class="wish-paragraph"></p>
+                </div>
+
+                <button class="btn-next" onclick="showScreen('screen-memories')">NEXT ✨</button>
+            </div>
+
         </div>
     </div>
 
-    <div id="screen-gallery" class="screen flex-center bg-pink">
-        <div class="gallery-card">
-            <h2>Will you be mine? 💍</h2>
-            <div class="photo-layout">
-                <img src="photo1.jpg" alt="Memory 1" class="gallery-img">
-                <img src="photo2.jpg" alt="Memory 2" class="gallery-img">
-                <img src="photo3.jpg" alt="Memory 3" class="gallery-img">
+
+    <div id="screen-memories" class="screen">
+        <div class="memories-container-horizontal">
+            
+            <div class="horizontal-frames-row">
+                
+                <div class="polaroid-frame frame-left">
+                    <div class="frame-img-wrapper">
+                        <img src="photo1.jpg" alt="Memory 1">
+                    </div>
+                </div>
+                
+                <div class="polaroid-frame frame-center">
+                    <div class="frame-img-wrapper">
+                        <img src="photo2.jpg" alt="Memory 2">
+                    </div>
+                </div>
+                
+                <div class="polaroid-frame frame-right">
+                    <div class="frame-img-wrapper">
+                        <img src="photo3.jpg" alt="Memory 3">
+                    </div>
+                </div>
+
             </div>
-            <p class="date-text">❤️ 04.07.2026 ❤️</p>
+
+            <div class="horizontal-text-section">
+                <h1 class="memories-title">Our Sweetest Moments</h1>
+                <p class="memories-paragraph-short">
+                    Every picture has a story, and these are my absolute favorites. Thank you for making my life so incredibly beautiful. ❤️
+                </p>
+                <button class="btn-continue" onclick="showScreen('screen-solo-picture')">NEXT 💕</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="screen-solo-picture" class="screen">
+        <div class="solo-picture-card">
+            <div class="solo-picture-frame">
+                <img src="solo.jpg" alt="Special You" class="solo-picture-img">
+            </div>
+            <div class="solo-message-box">
+                <p id="emotional-message" class="emotional-message"></p>
+            </div>
+            <button class="btn-restart" onclick="showScreen('screen-passcode')">AGAIN 💫</button>
         </div>
     </div>
 
